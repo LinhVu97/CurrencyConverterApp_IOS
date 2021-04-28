@@ -22,6 +22,11 @@
 		C4676A61263959C9001B21CD /* TRY.png in Resources */ = {isa = PBXBuildFile; fileRef = C4676A58263959C9001B21CD /* TRY.png */; };
 		C4676A62263959C9001B21CD /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4676A59263959C9001B21CD /* default.png */; };
 		C4676A63263959C9001B21CD /* back.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4676A5A263959C9001B21CD /* back.jpg */; };
+		C4676A6626395CF6001B21CD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4676A6426395CF6001B21CD /* DetailsViewController.swift */; };
+		C4676A6726395CF6001B21CD /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4676A6526395CF6001B21CD /* DetailsViewController.xib */; };
+		C4676A6A26395E0C001B21CD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4676A6826395E0C001B21CD /* TableViewCell.swift */; };
+		C4676A6B26395E0C001B21CD /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4676A6926395E0C001B21CD /* TableViewCell.xib */; };
+		C4676A6D26396047001B21CD /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4676A6C26396047001B21CD /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,11 @@
 		C4676A58263959C9001B21CD /* TRY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TRY.png; sourceTree = "<group>"; };
 		C4676A59263959C9001B21CD /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		C4676A5A263959C9001B21CD /* back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpg; sourceTree = "<group>"; };
+		C4676A6426395CF6001B21CD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		C4676A6526395CF6001B21CD /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		C4676A6826395E0C001B21CD /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C4676A6926395E0C001B21CD /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		C4676A6C26396047001B21CD /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +84,7 @@
 		C4436FCB2639589900564F90 /* Currency Converter App */ = {
 			isa = PBXGroup;
 			children = (
-				C4676A51263959C9001B21CD /* flags copy */,
+				C4676A51263959C9001B21CD /* flags */,
 				C4436FCC2639589900564F90 /* AppDelegate.swift */,
 				C4436FCE2639589900564F90 /* SceneDelegate.swift */,
 				C4436FD52639589A00564F90 /* Assets.xcassets */,
@@ -82,11 +92,16 @@
 				C4436FDA2639589A00564F90 /* Info.plist */,
 				C4676A4D26395950001B21CD /* ViewController.swift */,
 				C4676A4E26395950001B21CD /* ViewController.xib */,
+				C4676A6426395CF6001B21CD /* DetailsViewController.swift */,
+				C4676A6526395CF6001B21CD /* DetailsViewController.xib */,
+				C4676A6826395E0C001B21CD /* TableViewCell.swift */,
+				C4676A6926395E0C001B21CD /* TableViewCell.xib */,
+				C4676A6C26396047001B21CD /* Currency.swift */,
 			);
 			path = "Currency Converter App";
 			sourceTree = "<group>";
 		};
-		C4676A51263959C9001B21CD /* flags copy */ = {
+		C4676A51263959C9001B21CD /* flags */ = {
 			isa = PBXGroup;
 			children = (
 				C4676A52263959C9001B21CD /* GBP.png */,
@@ -99,7 +114,7 @@
 				C4676A59263959C9001B21CD /* default.png */,
 				C4676A5A263959C9001B21CD /* back.jpg */,
 			);
-			path = "flags copy";
+			path = flags;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,8 +183,10 @@
 				C4676A60263959C9001B21CD /* currency.png in Resources */,
 				C4676A5E263959C9001B21CD /* USD.png in Resources */,
 				C4436FD62639589A00564F90 /* Assets.xcassets in Resources */,
+				C4676A6B26395E0C001B21CD /* TableViewCell.xib in Resources */,
 				C4676A61263959C9001B21CD /* TRY.png in Resources */,
 				C4676A5F263959C9001B21CD /* EUR.png in Resources */,
+				C4676A6726395CF6001B21CD /* DetailsViewController.xib in Resources */,
 				C4676A5B263959C9001B21CD /* GBP.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,9 +198,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4676A6D26396047001B21CD /* Currency.swift in Sources */,
+				C4676A6A26395E0C001B21CD /* TableViewCell.swift in Sources */,
 				C4676A4F26395950001B21CD /* ViewController.swift in Sources */,
 				C4436FCD2639589900564F90 /* AppDelegate.swift in Sources */,
 				C4436FCF2639589900564F90 /* SceneDelegate.swift in Sources */,
+				C4676A6626395CF6001B21CD /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
