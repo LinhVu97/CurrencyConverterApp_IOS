@@ -21,12 +21,12 @@ class DetailsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        getData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        getData()
     }
     
     private func getData() {
@@ -36,7 +36,35 @@ class DetailsViewController: UIViewController {
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, resp, err in
+            if err != nil {
+                print(err?.localizedDescription)
+                return
+            }
             
+            guard let data = data else {
+                return
+            }
+            
+            do {
+                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! Dictionary<String, Any>
+                
+                DispatchQueue.main.async {
+                    let array = Array(jsonResponse["rates"] as! [String: Any])
+                    for (key, value) in array {
+                        var entity = Currency(code: "")
+                        entity.code = key
+                        entity.value = value as! Double
+                        self.listData.append(entity)
+                        
+                        self.tableView.reloadData()
+                    }
+                }
+                
+                print(self.listData.count)
+                
+            } catch {
+                print("error")
+            }
         }
         
         task.resume()
@@ -50,7 +78,8 @@ extension DetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as! TableViewCell
-
+        cell.imageViewCell?.image = UIImage(named: listData[indexPath.row].image)
+        cell.labelCell?.text = "\(listData[indexPath.row].value) : \(listData[indexPath.row].code)"
         return cell
     }
     
